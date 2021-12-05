@@ -1,25 +1,29 @@
 #container {
-    margin: 150px;
-    padding: 140px;
+    padding: 20px;
     width: 60%;
-    height: 70%;
+    height: 400px;
     border: 3px solid black;
-    line-height: 10px;
-    font-size: 22px;
-    text-align: center;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
     background-color: azure;
+    text-align: center;
+}
+#container div {
+    height: 120px;
+    width: 35%;
+    margin-top: 100px;
+    display: flex;
+}
+#container div a {
+  display: table;
+  margin: auto;
 }
 #division {
-    height: 100px;
-    width: 35%;
     float: left;
     border: 3px solid black;
-    text-align: center;
 }
 #multiplication {
-    height: 100px;
-    width: 35%;
     float: right;
-    border: 3px solid black;
-    text-align: center;
+    border: 7px solid black;
 }
