@@ -1,0 +1,25 @@
+#container {
+    margin: 150px;
+    padding: 140px;
+    width: 60%;
+    height: 70%;
+    border: 3px solid black;
+    line-height: 10px;
+    font-size: 22px;
+    text-align: center;
+    background-color: azure;
+}
+#division {
+    height: 100px;
+    width: 35%;
+    float: left;
+    border: 3px solid black;
+    text-align: center;
+}
+#multiplication {
+    height: 100px;
+    width: 35%;
+    float: right;
+    border: 3px solid black;
+    text-align: center;
+}
