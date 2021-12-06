@@ -8,22 +8,36 @@
     margin-left: auto;
     background-color: azure;
     text-align: center;
+    font-family: Calibri, serif;
+    display: table;
 }
-#container div {
+.command-button {
     height: 120px;
     width: 35%;
-    margin-top: 100px;
     display: flex;
 }
+#divormult {
+    margin-top: 100px;
+    font-size: 22px;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+}
 #container div a {
-  display: table;
-  margin: auto;
+    display: table;
+    margin: auto;
 }
 #division {
     float: left;
-    border: 3px solid black;
+    border: 5px ridge black;
+    border-radius: 35px;
 }
 #multiplication {
     float: right;
-    border: 7px solid black;
+    border: 5px ridge black;
+    border-radius: 35px;
+}
+#divormult span {
+    color: #174ab3;
+    display: inline-block;
+    margin-top: 60px;
+
 }
