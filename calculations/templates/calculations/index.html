@@ -11,7 +11,7 @@
 <div id="container">
     <h1>Привет! Выбери действие:</h1>
     <div id="divormult">
-        <a href="#" class="div-button" id="division">Деление</a>
+        <a href="{% url 'division' %}" class="div-button" id="division">Деление</a>
         <span>или</span>
         <a href='{% url 'multiplication' %}' class="div-button" id="multiplication">Умножение</a>
     </div>

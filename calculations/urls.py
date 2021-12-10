@@ -6,5 +6,6 @@ from calculations.views import *
 urlpatterns = [
     path('', index, name='home'),
     path('admin/', admin.site.urls),
-    path('mult/', multiplication, name='multiplication')
+    path('multiplication/', multiplication, name='multiplication'),
+    path('division/', division, name='division'),
 ]
