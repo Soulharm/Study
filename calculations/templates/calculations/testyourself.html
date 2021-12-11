@@ -10,7 +10,11 @@
 <body>
 <div id="tycontainer">
     <h1>Проверь себя!</h1>
-    <p>{{ examples }}</p>
+    {% for item in examples %}
+        <span>{{ item }}</span>
+            <input required type="text" class="text-field__input" placeholder="Введите ответ ">
+        <br>
+    {% endfor %}
     <button>Проверить</button>
 </div>
 </body>
