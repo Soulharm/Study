@@ -10,9 +10,11 @@
 <body>
 <div id="tycontainer">
     <h1>Проверь себя!</h1>
-    {% for item in examples %}
-        <span>{{ item }}</span>
-            <input required type="text" class="text-field__input" placeholder="Введите ответ ">
+    {% for key, value in result.items %}
+        <span>{{ key }}</span>
+        <input class="integer-field__input" placeholder="Введите ответ " required type='text'>
+        <span class="Disabled">Правильный ответ:</span>
+        <span class="Disabled">{{ value }}</span>
         <br>
     {% endfor %}
     <button>Проверить</button>

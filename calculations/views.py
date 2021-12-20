@@ -10,8 +10,8 @@ def index(request):
 def multiplication(request):
     # Создаём массивы примеров и правильных решений для рендеринга
     examples, results = testmultdiv(5)
-    result = {"examples": examples,
-              'results': results}
+    dict_result = dict(zip(examples, results))
+    result = {'result': dict_result}
     return render(request, 'calculations/testyourself.html', context=result)
 
 
