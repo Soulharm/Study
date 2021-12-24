@@ -4,8 +4,10 @@ import random
 def testmultdiv(x):
     example = []
     correctresult = []
-    for i in range(1, x+1):
+    while len(example) < x:
         result = mult()
+        if result[0] in example:
+            continue
         example.append(result[0])
         correctresult.append(result[1])
     return example, correctresult

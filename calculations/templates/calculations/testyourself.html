@@ -6,18 +6,33 @@
     <meta charset="UTF-8">
     <title>Проверь себя</title>
     <link rel="stylesheet" type="text/css" href="{% static 'calculations/css/testyourself.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
 </head>
 <body>
+<script>
+function Check() {
+    res = $('#my_answer1').val();
+    res2 = $('#true_answer1').html();
+    if(res == res2) {
+        $('#my_answer1').css("border", "2px solid green");
+    } else {
+        $('#my_answer1').css("border", "2px solid red");
+        $('#true_answer1').removeClass('disabled');
+        $('#true_answer_text1').removeClass('disabled');
+    }
+}
+</script>
 <div id="tycontainer">
     <h1>Проверь себя!</h1>
     {% for key, value in result.items %}
         <span>{{ key }}</span>
-        <input class="integer-field__input" placeholder="Введите ответ " required type='text'>
-        <span class="Disabled">Правильный ответ:</span>
-        <span class="Disabled">{{ value }}</span>
+        <input class="integer-field__input" id="my_answer{{ forloop.counter }}" placeholder="Введите ответ " required type='text'>
+        <span class="disabled" id="true_answer_text{{ forloop.counter }}" >Правильный ответ:</span>
+        <span class="disabled"  id="true_answer{{ forloop.counter }}">{{ value }}</span>
         <br>
     {% endfor %}
-    <button>Проверить</button>
+    <button onclick="Check()">Проверить</button>
 </div>
 </body>
 </html>
