@@ -11,28 +11,45 @@
 </head>
 <body>
 <script>
-function Check() {
-    res = $('#my_answer1').val();
-    res2 = $('#true_answer1').html();
-    if(res == res2) {
-        $('#my_answer1').css("border", "2px solid green");
-    } else {
-        $('#my_answer1').css("border", "2px solid red");
-        $('#true_answer1').removeClass('disabled');
-        $('#true_answer_text1').removeClass('disabled');
+
+
+function CheckAll() {
+    let count = '{{ result|length}}';
+    let res = 0;
+    for (let i = 1; i <= count; i++) {
+        let value = $('#my_answer'+i).val();
+        let value_true = $('#true_answer'+i).html();
+        if (value == value_true) {
+            $('#my_answer'+i).css('border', '2px solid green');
+            $('#true_answer'+i).addClass('disabled');
+            $('#true_answer_text'+i).addClass('disabled');
+            res++;
+        } else {
+            $('#my_answer'+i).css("border", "2px solid red");
+            $('#true_answer'+i).removeClass('disabled');
+            $('#true_answer_text'+i).removeClass('disabled');
+        }
     }
+    if (res == count) {
+         $('#mainh1').text('Молодец!');
+    }
+    $('#button').prop('disabled', true);
+
 }
+
 </script>
 <div id="tycontainer">
-    <h1>Проверь себя!</h1>
+    <h1 id="mainh1">Проверь себя!</h1>
     {% for key, value in result.items %}
+        <div id="line">
         <span>{{ key }}</span>
         <input class="integer-field__input" id="my_answer{{ forloop.counter }}" placeholder="Введите ответ " required type='text'>
         <span class="disabled" id="true_answer_text{{ forloop.counter }}" >Правильный ответ:</span>
         <span class="disabled"  id="true_answer{{ forloop.counter }}">{{ value }}</span>
         <br>
+        </div>
     {% endfor %}
-    <button onclick="Check()">Проверить</button>
+    <button id="button" onclick="CheckAll()">Проверить</button>
 </div>
 </body>
 </html>

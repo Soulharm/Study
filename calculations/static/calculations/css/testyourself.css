@@ -67,3 +67,8 @@ body {
 .disabled {
     display: none;
 }
+
+#line {
+    margin-left: 420px;
+    text-align: left;
+}

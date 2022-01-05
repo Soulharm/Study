@@ -1,11 +1,14 @@
 from django.shortcuts import render
 
 from calculations.functions import testmultdiv
+from django.shortcuts import render
 
 
 def index(request):
     return render(request, 'calculations/index.html', )
 
+def count(request):
+    pass
 
 def multiplication(request):
     # Создаём массивы примеров и правильных решений для рендеринга
