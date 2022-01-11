@@ -9,8 +9,9 @@
 </head>
 <body>
 <div id="container">
-    <h1>Привет! Выбери действие:</h1>
+    <h1>Привет! Выбери уровень сложности и действие:</h1>
     <div id="divormult">
+        <div id="check_level_of_difficulty"></div>
         <a href="{% url 'division' %}" class="div-button" id="division">Деление</a>
         <span>или</span>
         <a href='{% url 'multiplication' %}' class="div-button" id="multiplication">Умножение</a>
