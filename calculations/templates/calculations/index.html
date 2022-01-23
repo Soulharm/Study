@@ -6,12 +6,20 @@
     <meta charset="UTF-8">
     <title>Calculations</title>
     <link rel="stylesheet" type="text/css" href="{% static 'calculations/css/styles.css' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 </head>
 <body>
+<script>
+
+</script>
 <div id="container">
     <h1>Привет! Выбери уровень сложности и действие:</h1>
     <div id="divormult">
-        <div id="check_level_of_difficulty"></div>
+        <div id="check_level_of_difficulty">
+            <div class="difficulty">Легко</div>
+            <div class="difficulty">Средне</div>
+            <div class="difficulty">Сложно</div>
+        </div>
         <a href="{% url 'division' %}" class="div-button" id="division">Деление</a>
         <span>или</span>
         <a href='{% url 'multiplication' %}' class="div-button" id="multiplication">Умножение</a>

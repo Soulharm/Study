@@ -11,8 +11,6 @@
 </head>
 <body>
 <script>
-
-
 function CheckAll() {
     let count = '{{ result|length}}';
     let res = 0;
@@ -34,22 +32,24 @@ function CheckAll() {
          $('#mainh1').text('Молодец!');
     }
     $('#button').prop('disabled', true);
-
 }
-
 </script>
 <div id="tycontainer">
     <h1 id="mainh1">Проверь себя!</h1>
     {% for key, value in result.items %}
         <div id="line">
-        <span>{{ key }}</span>
-        <input class="integer-field__input" id="my_answer{{ forloop.counter }}" placeholder="Введите ответ " required type='text'>
-        <span class="disabled" id="true_answer_text{{ forloop.counter }}" >Правильный ответ:</span>
-        <span class="disabled"  id="true_answer{{ forloop.counter }}">{{ value }}</span>
-        <br>
+            <span>{{ key }}</span>
+            <input class="integer-field__input" id="my_answer{{ forloop.counter }}" placeholder="Введите ответ " autocomplete="off" required type='text'>
+            <span class="disabled" id="true_answer_text{{ forloop.counter }}">Правильный ответ:</span>
+            <span class="disabled"  id="true_answer{{ forloop.counter }}">{{ value }}</span>
+            <br>
         </div>
     {% endfor %}
-    <button id="button" onclick="CheckAll()">Проверить</button>
+    <div><button id="button" onclick="CheckAll()">Проверить</button></div>
+    <div id="return_and_reset">
+        <button id="button_reset"  onclick="location.href = '{{request.get_full_path}}'">Попробовать ещё раз!</button>
+        <button id="button_return" onclick="location.href = '/'">Назад</button>
+    </div>
 </div>
 </body>
 </html>
