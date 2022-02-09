@@ -6,6 +6,7 @@ body {
     height: 90vh;
     position: relative;
 }
+
 #tycontainer {
     padding: 20px;
     width: 60%;
@@ -52,17 +53,14 @@ body {
   opacity: 0.4;
 }
 
-#tycontainer span {
-    margin-top: 3px;
-    line-height: 1.5;
-}
 .disabled {
     display: none;
 }
 
-#line {
-    margin-right: 450px;
-    text-align: right;
+.lines {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 250px;
 }
 
 #button {
@@ -108,4 +106,17 @@ body {
 
 #return_and_reset {
     text-align: left;
+}
+
+.second_line {
+    display: inline-block;
+    position: absolute;
+    margin-left: 10px;
+    font-size: 28px;
+}
+
+.first_line {
+    display: inline-block;
+    float: right;
+
 }

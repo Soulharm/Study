@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Проверь себя</title>
     <link rel="stylesheet" type="text/css" href="{% static 'calculations/css/testyourself.css' %}"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'calculations/images/favicon.ico' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
 </head>
@@ -37,13 +38,17 @@ function CheckAll() {
 <div id="tycontainer">
     <h1 id="mainh1">Проверь себя!</h1>
     {% for key, value in result.items %}
-        <div id="line">
-            <span>{{ key }}</span>
-            <input class="integer-field__input" id="my_answer{{ forloop.counter }}" placeholder="Введите ответ " autocomplete="off" required type='text'>
-            <span class="disabled" id="true_answer_text{{ forloop.counter }}">Правильный ответ:</span>
-            <span class="disabled"  id="true_answer{{ forloop.counter }}">{{ value }}</span>
-            <br>
+        <div class="lines">
+            <div class="first_line">
+                <span>{{ key }}</span>
+                <input class="integer-field__input" id="my_answer{{ forloop.counter }}" placeholder="Введите ответ " autocomplete="off" required type='text'>
+            </div>
         </div>
+        <div class="second_line">
+            <span class="disabled" id="true_answer_text{{ forloop.counter }}">Правильный ответ:</span>
+            <span class="disabled" id="true_answer{{ forloop.counter }}">{{ value }}</span>
+        </div>
+        <br>
     {% endfor %}
     <div><button id="button" onclick="CheckAll()">Проверить</button></div>
     <div id="return_and_reset">
